@@ -1,0 +1,16 @@
+{
+    "schema": {
+        "sampleset_desc": {
+            "type": "text"
+        }, 
+        "num_replicates": {
+            "type": "keyword"
+        }, 
+        "source": {
+            "type": "keyword"
+        }, 
+        "num_samples": {
+            "type": "keyword"
+        }
+    }
+}

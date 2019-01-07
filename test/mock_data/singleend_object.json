@@ -1,0 +1,136 @@
+{
+  "data": [
+    {
+      "data": {
+        "base_percentages": {
+          "A": 29.02,
+          "C": 21.1858,
+          "G": 21.0896,
+          "N": 0.0442,
+          "T": 28.6605
+        },
+        "gc_content": 0.4227540000000001,
+        "lib": {
+          "encoding": "ascii",
+          "file": {
+            "file_name": "shortjump.fastq.gz",
+            "hid": "KBH_129901",
+            "id": "1f45631c-72d0-43ff-9549-fc3a2d522406",
+            "remote_md5": "0449f3a4215470094f7beb052b58cd9b",
+            "type": "shock",
+            "url": "https://ci.kbase.us/services/shock-api"
+          },
+          "size": 1749026812,
+          "type": "fq"
+        },
+        "number_of_duplicates": 270862,
+        "phred_type": "33",
+        "qual_max": 38.0,
+        "qual_mean": 33.6761,
+        "qual_min": 0.0,
+        "qual_stdev": 8.8857,
+        "read_count": 22669408,
+        "read_length_mean": 101.0,
+        "read_length_stdev": 0.0,
+        "sequencing_tech": "Illumina",
+        "single_genome": 1,
+        "total_bases": 2289610208
+      },
+      "info": [
+        7,
+        "shortjump.fastq_reads",
+        "KBaseFile.SingleEndLibrary-2.2",
+        "2017-01-26T01:27:03+0000",
+        1,
+        "scanon",
+        15767,
+        "scanon:1483663515863",
+        "fc6019621cea2421a7da947eebc85479",
+        645,
+        {
+          "qual_min": "0.0",
+          "qual_mean": "33.6761",
+          "sequencing_tech": "Illumina",
+          "number_of_duplicates": "270862",
+          "read_length_mean": "101.0",
+          "qual_stdev": "8.8857",
+          "read_length_stdev": "0.0",
+          "qual_max": "38.0",
+          "total_bases": "2289610208",
+          "single_genome": "1",
+          "gc_content": "0.4227540000000001",
+          "read_count": "22669408",
+          "phred_type": "33"
+        }
+      ],
+      "path": [
+        "15767/7/1"
+      ],
+      "provenance": [
+        {
+          "time": "2017-01-26T01:03:24+0000",
+          "epoch": 1485392604000,
+          "service": "kb_uploadmethods",
+          "service_ver": "0.1.0",
+          "method": "upload_fastq_file",
+          "method_params": [
+            {
+              "workspace_name": "scanon:1483663515863",
+              "fwd_staging_file_name": "shortjump.fastq",
+              "sequencing_tech": "Illumina",
+              "name": "shortjump.fastq_reads"
+            }
+          ],
+          "input_ws_objects": [],
+          "resolved_ws_objects": [],
+          "external_data": [],
+          "subactions": [
+            {
+              "name": "kb_uploadmethods",
+              "ver": "0.1.0",
+              "code_url": "https://github.com/kbaseapps/kb_uploadmethods",
+              "commit": "8e1898dd971fb8c408e44ab44d58ba0ee8be68da"
+            },
+            {
+              "name": "ftp_service",
+              "ver": "0.0.1-dev",
+              "code_url": "https://github.com/kbaseapps/ftp_service",
+              "commit": "0a6dca52e67af20f38769d8bc522e74b291b9bde"
+            },
+            {
+              "name": "ReadsUtils",
+              "ver": "0.3.3-release",
+              "code_url": "https://github.com/kbaseapps/ReadsUtils",
+              "commit": "0c10cf92e8c72d037349feec12b2aa81f100819c"
+            },
+            {
+              "name": "DataFileUtil",
+              "ver": "0.0.10-release",
+              "code_url": "https://github.com/kbaseapps/DataFileUtil",
+              "commit": "3f46ef2b0aac104426314ebfb0af7543fa5b2718"
+            },
+            {
+              "name": "kb_ea_utils",
+              "ver": "0.0.1-release",
+              "code_url": "https://github.com/kbaseapps/kb_ea_utils",
+              "commit": "6eb3a966192d3393fb611fda90958699eec266e3"
+            }
+          ],
+          "custom": {},
+          "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+      ],
+      "creator": "scanon",
+      "orig_wsid": 15767,
+      "created": "2017-01-26T01:27:03+0000",
+      "epoch": 1485394023799,
+      "refs": [],
+      "copy_source_inaccessible": 0,
+      "extracted_ids": {
+        "handle": [
+          "KBH_129901"
+        ]
+      }
+    }
+  ]
+}

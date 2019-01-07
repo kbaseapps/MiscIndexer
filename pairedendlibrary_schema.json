@@ -1,0 +1,28 @@
+{
+    "schema": {
+        "files": {
+            "type": "text"
+        }, 
+        "phred_type": {
+            "type": "keyword"
+        }, 
+        "read_length": {
+            "type": "integer"
+        }, 
+        "technology": {
+            "type": "text"
+        }, 
+        "read_count": {
+            "type": "integer"
+        }, 
+        "gc_content": {
+            "type": "double"
+        }, 
+        "quality": {
+            "type": "double"
+        }, 
+        "insert_size": {
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "schema": {
+        "genomes": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "text"
+        },
+        "orthologs": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "keyword"
+        }
+    }
+}

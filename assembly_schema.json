@@ -1,0 +1,22 @@
+{
+    "schema": {
+        "contig_count": {
+            "type": "long"
+        },
+        "contigs": {
+            "type": "integer"
+        },
+        "dna_size": {
+            "type": "integer"
+        },
+        "external_source_id": {
+            "type": "text"
+        },
+        "gc_content": {
+            "type": "double"
+        },
+        "name": {
+            "type": "text"
+        }
+    }
+}

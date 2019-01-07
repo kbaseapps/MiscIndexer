@@ -1,0 +1,13 @@
+{
+    "schema": {
+        "function": {
+            "type": "text"
+        },
+        "id": {
+            "type": "keyword"
+        },
+        "ortholog_genes": {
+            "type": "keyword"
+        }
+    }
+}

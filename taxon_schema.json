@@ -1,0 +1,19 @@
+{
+    "schema": {
+        "scientific_name": {
+            "type": "keyword"
+        }, 
+        "scientific_lineage": {
+            "type": "text"
+        }, 
+        "domain": {
+            "type": "keyword"
+        }, 
+        "genetic_code": {
+            "type": "long"
+        }, 
+        "aliases": {
+            "type": "keyword"
+        }
+    }
+}

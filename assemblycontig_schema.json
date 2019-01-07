@@ -1,0 +1,16 @@
+{
+    "schema": {
+        "contig_id": {
+            "type": "keyword"
+        },
+        "description": {
+            "type": "text"
+        },
+        "gc_content": {
+            "type": "double"
+        },
+        "length": {
+            "type": "integer"
+        }
+    }
+}

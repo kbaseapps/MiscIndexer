@@ -1,0 +1,208 @@
+{
+  "data": [
+    {
+      "data": {
+        "Library_type": "PairedEnd",
+        "condition": [
+          "pyridine",
+          "pyridine",
+          "pyridine",
+          "acetate",
+          "acetate",
+          "acetate",
+          "glucose",
+          "glucose",
+          "glucose"
+        ],
+        "domain": "Prokaryotes",
+        "num_samples": 9,
+        "platform": "Illumina",
+        "publication_id": null,
+        "sample_ids": [
+          "16837/5/1",
+          "16837/10/1",
+          "16837/12/1",
+          "16837/4/1",
+          "16837/7/1",
+          "16837/8/1",
+          "16837/6/1",
+          "16837/11/1",
+          "16837/13/1"
+        ],
+        "sample_n_conditions": [
+          {
+            "condition": "pyridine",
+            "sample_id": "16837/5/1"
+          },
+          {
+            "condition": "pyridine",
+            "sample_id": "16837/10/1"
+          },
+          {
+            "condition": "pyridine",
+            "sample_id": "16837/12/1"
+          },
+          {
+            "condition": "acetate",
+            "sample_id": "16837/4/1"
+          },
+          {
+            "condition": "acetate",
+            "sample_id": "16837/7/1"
+          },
+          {
+            "condition": "acetate",
+            "sample_id": "16837/8/1"
+          },
+          {
+            "condition": "glucose",
+            "sample_id": "16837/6/1"
+          },
+          {
+            "condition": "glucose",
+            "sample_id": "16837/11/1"
+          },
+          {
+            "condition": "glucose",
+            "sample_id": "16837/13/1"
+          }
+        ],
+        "sampleset_desc": "Micrococcus luteus RNA Seq Data consisting of 3 conditions (pyridine, acetate and glucose) and 3 replicates for each condition",
+        "sampleset_id": "micrococcus.RNASeqData",
+        "source": "ftp://ftp.igsb.anl.gov/jobs/3be3b95881848db2586045af97b23898/Project_ExxonRNAseq/"
+      },
+      "info": [
+        14,
+        "micrococcus.RNASeqData",
+        "KBaseRNASeq.RNASeqSampleSet-4.0",
+        "2017-01-27T23:42:52+0000",
+        1,
+        "scanon",
+        16962,
+        "scanon:narrative_1485560571814",
+        "1e90cc31a71fb43e95676c24bd0c3185",
+        1087,
+        {
+          "sampleset_id": "micrococcus.RNASeqData",
+          "length(condition)": "9",
+          "platform": "Illumina",
+          "num_samples": "9"
+        }
+      ],
+      "path": [
+        "16962/14/1"
+      ],
+      "provenance": [
+        {
+          "service": "KBaseRNASeq",
+          "method": "CreateRNASeqSampleSet",
+          "method_params": [
+            {
+              "Library_type": "PairedEnd",
+              "domain": "Prokaryotes",
+              "sample_ids": [
+                "16837/5/1",
+                "16837/10/1",
+                "16837/12/1",
+                "16837/4/1",
+                "16837/7/1",
+                "16837/8/1",
+                "16837/6/1",
+                "16837/11/1",
+                "16837/13/1"
+              ],
+              "source": "ftp://ftp.igsb.anl.gov/jobs/3be3b95881848db2586045af97b23898/Project_ExxonRNAseq/",
+              "publication_id": null,
+              "platform": "Illumina",
+              "sampleset_id": "micrococcus.RNASeqData",
+              "sampleset_desc": "Micrococcus luteus RNA Seq Data consisting of 3 conditions (pyridine, acetate and glucose) and 3 replicates for each condition",
+              "sample_n_conditions": [
+                {
+                  "condition": "pyridine",
+                  "sample_id": "16837/5/1"
+                },
+                {
+                  "condition": "pyridine",
+                  "sample_id": "16837/10/1"
+                },
+                {
+                  "condition": "pyridine",
+                  "sample_id": "16837/12/1"
+                },
+                {
+                  "condition": "acetate",
+                  "sample_id": "16837/4/1"
+                },
+                {
+                  "condition": "acetate",
+                  "sample_id": "16837/7/1"
+                },
+                {
+                  "condition": "acetate",
+                  "sample_id": "16837/8/1"
+                },
+                {
+                  "condition": "glucose",
+                  "sample_id": "16837/6/1"
+                },
+                {
+                  "condition": "glucose",
+                  "sample_id": "16837/11/1"
+                },
+                {
+                  "condition": "glucose",
+                  "sample_id": "16837/13/1"
+                }
+              ],
+              "ws_id": "jplfaria:1485469584244",
+              "condition": [
+                "pyridine",
+                "pyridine",
+                "pyridine",
+                "acetate",
+                "acetate",
+                "acetate",
+                "glucose",
+                "glucose",
+                "glucose"
+              ]
+            }
+          ],
+          "input_ws_objects": [
+            "16837/4/1",
+            "16837/5/1",
+            "16837/8/1",
+            "16837/13/1",
+            "16837/6/1",
+            "16837/7/1",
+            "16837/10/1",
+            "16837/12/1",
+            "16837/11/1"
+          ],
+          "resolved_ws_objects": [
+            "16837/13/1",
+            "16837/8/1",
+            "16837/10/1",
+            "16837/5/1",
+            "16837/7/1",
+            "16837/6/1",
+            "16837/12/1",
+            "16837/4/1",
+            "16837/11/1"
+          ],
+          "external_data": [],
+          "subactions": [],
+          "custom": {}
+        }
+      ],
+      "creator": "jplfaria",
+      "orig_wsid": 16837,
+      "created": "2017-01-27T03:32:03+0000",
+      "epoch": 1485487923861,
+      "refs": [],
+      "copied": "16837/14/1",
+      "copy_source_inaccessible": 0,
+      "extracted_ids": {}
+    }
+  ]
+}

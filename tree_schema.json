@@ -1,0 +1,10 @@
+{
+    "schema": {
+        "labels": {
+            "type": "text"
+        }, 
+        "type": {
+            "type": "keyword"
+        }
+    }
+}

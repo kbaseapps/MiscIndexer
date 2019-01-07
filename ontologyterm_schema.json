@@ -1,0 +1,25 @@
+{
+    "schema": {
+        "definition": {
+            "type": "text"
+        },
+        "id": {
+            "type": "keyword"
+        },
+        "name": {
+            "type": "text"
+        },
+        "namespace": {
+            "type": "keyword"
+        },
+        "ontology_id": {
+            "type": "keyword"
+        },
+        "ontology_name": {
+            "type": "keyword"
+        },
+        "synonyms": {
+            "type": "text"
+        }
+    }
+}

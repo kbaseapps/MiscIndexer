@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "data": {
+        "base_percentages": {
+          "A": 16.0727,
+          "C": 33.9538,
+          "G": 33.9735,
+          "N": 0.0,
+          "T": 16.0
+        },
+        "gc_content": 0.679273,
+        "insert_size_mean": null,
+        "insert_size_std_dev": null,
+        "interleaved": 1,
+        "lib1": {
+          "encoding": "ascii",
+          "file": {
+            "file_name": "82557df1-c49d-446c-b6fc-1d245a37dede.inter.fastq.gz",
+            "hid": "KBH_105381",
+            "id": "ff552b64-0a39-4155-b6c4-bf728314c331",
+            "remote_md5": "7372a2ed0ebbf2f43144b29b2743ecd8",
+            "type": "shock",
+            "url": "https://ci.kbase.us/services/shock-api"
+          },
+          "size": 2491520,
+          "type": "fq"
+        },
+        "number_of_duplicates": 792,
+        "phred_type": "33",
+        "qual_max": 51.0,
+        "qual_mean": 43.0493,
+        "qual_min": 10.0,
+        "qual_stdev": 10.545,
+        "read_count": 25000,
+        "read_length_mean": 100.0,
+        "read_length_stdev": 0.0,
+        "read_orientation_outward": 0,
+        "sequencing_tech": "Illumina",
+        "single_genome": 1,
+        "total_bases": 2500000
+      },
+      "info": [
+        5,
+        "small",
+        "KBaseFile.PairedEndLibrary-2.2",
+        "2017-01-11T19:59:55+0000",
+        1,
+        "scanon",
+        15767,
+        "scanon:1483663515863",
+        "b1f67bb452f3a9650555f4cb39a199ab",
+        750,
+        {
+          "qual_min": "10.0",
+          "qual_mean": "43.0493",
+          "sequencing_tech": "Illumina",
+          "number_of_duplicates": "792",
+          "read_length_mean": "100.0",
+          "qual_stdev": "10.545",
+          "read_length_stdev": "0.0",
+          "qual_max": "51.0",
+          "total_bases": "2500000",
+          "single_genome": "1",
+          "gc_content": "0.679273",
+          "read_count": "25000",
+          "phred_type": "33"
+        }
+      ],
+      "path": [
+        "15767/5/1"
+      ],
+      "provenance": [
+        {
+          "time": "2017-01-11T19:57:33+0000",
+          "epoch": 1484164653000,
+          "service": "ReadsUtils",
+          "service_ver": "0.2.0",
+          "method": "upload_reads",
+          "method_params": [
+            {
+              "insert_size_std_dev": null,
+              "wsname": "scanon:1483663515863",
+              "insert_size_mean": null,
+              "rev_id": "53e13d05-dd81-45ac-8dd6-b313579f3293",
+              "single_genome": 1,
+              "sequencing_tech": "Illumina",
+              "fwd_id": "096ded9b-782b-4749-a9b7-3dde6ead6fd0",
+              "read_orientation_outward": 0,
+              "interleaved": 1,
+              "name": "small"
+            }
+          ],
+          "input_ws_objects": [],
+          "resolved_ws_objects": [],
+          "external_data": [],
+          "subactions": [
+            {
+              "name": "ReadsUtils",
+              "ver": "0.2.0",
+              "code_url": "https://github.com/kbaseapps/ReadsUtils",
+              "commit": "8c35a1fb7f07fd5b0a473df2412390496ae278b3"
+            },
+            {
+              "name": "DataFileUtil",
+              "ver": "0.0.7-release",
+              "code_url": "https://github.com/kbaseapps/DataFileUtil",
+              "commit": "744383936d66db85888fc9a81898918ea2224b1b"
+            },
+            {
+              "name": "kb_ea_utils",
+              "ver": "0.0.1-release",
+              "code_url": "https://github.com/kbaseapps/kb_ea_utils",
+              "commit": "6eb3a966192d3393fb611fda90958699eec266e3"
+            }
+          ],
+          "custom": {},
+          "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+      ],
+      "creator": "scanon",
+      "orig_wsid": 15767,
+      "created": "2017-01-11T19:59:55+0000",
+      "epoch": 1484164795537,
+      "refs": [],
+      "copy_source_inaccessible": 0,
+      "extracted_ids": {
+        "handle": [
+          "KBH_105381"
+        ]
+      }
+    }
+  ]
+}

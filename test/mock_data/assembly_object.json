@@ -1,0 +1,149 @@
+{
+  "data": [
+    {
+      "info": [
+        206394, 
+        "GCF_003176855.1_assembly", 
+        "KBaseGenomeAnnotations.Assembly-6.0", 
+        "2018-07-11T22:57:59+0000", 
+        1, 
+        "kbasedata", 
+        15792, 
+        "ReferenceDataManager", 
+        "026dc7e665f27317e8f0bdcb333d082a", 
+        1354, 
+        {
+          "N Contigs": "3", 
+          "MD5": "20d2f54002bce9b1382c48c11f92b8d7", 
+          "Size": "5272885", 
+          "GC content": "0.50798"
+        }
+      ], 
+      "orig_wsid": 15792, 
+      "creator": "kbasedata", 
+      "refs": [], 
+      "provenance": [
+        {
+          "input_ws_objects": [], 
+          "description": "KBase SDK method run via the KBase Execution Engine", 
+          "service": "ReferenceDataManager", 
+          "resolved_ws_objects": [], 
+          "external_data": [], 
+          "custom": {}, 
+          "service_ver": "1.0.0", 
+          "epoch": 1531320044000, 
+          "method_params": [
+            {
+              "kb_env": "ci", 
+              "domain": "bacteria", 
+              "index_in_solr": 0, 
+              "start_offset": 25000, 
+              "genome_type": "KBaseGenomes.Genome-14.", 
+              "phytozome": 0, 
+              "ensembl": 0, 
+              "workspace_name": "kbasedata:narrative_1528412963422", 
+              "refseq": 1, 
+              "cut_off_date": "2018-05-19"
+            }
+          ], 
+          "time": "2018-07-11T14:40:44+0000", 
+          "subactions": [
+            {
+              "commit": "691c6679d4a3e427abdf78649b9dc608b260a864", 
+              "ver": "1.0.0", 
+              "name": "ReferenceDataManager", 
+              "code_url": "https://github.com/kbaseapps/ReferenceDataManager"
+            }, 
+            {
+              "commit": "02c587de19839c8962d43b81e299bd9f712604bf", 
+              "ver": "0.8.6-beta", 
+              "name": "GenomeFileUtil", 
+              "code_url": "https://github.com/kbaseapps/GenomeFileUtil"
+            }, 
+            {
+              "commit": "2c2271c6e5351d1a8d2673b3b7b581c6599ec1f9", 
+              "ver": "0.0.23-release", 
+              "name": "DataFileUtil", 
+              "code_url": "https://github.com/kbaseapps/DataFileUtil"
+            }, 
+            {
+              "commit": "2b9b53d852190c94996e620d4754ca6aa98c0cb4", 
+              "ver": "1.0.6-release", 
+              "name": "AssemblyUtil", 
+              "code_url": "https://github.com/kbaseapps/AssemblyUtil"
+            }
+          ], 
+          "method": "load_refgenomes"
+        }
+      ], 
+      "created": "2018-07-11T22:57:59+0000", 
+      "epoch": 1531349879100, 
+      "copy_source_inaccessible": 0, 
+      "path": [
+        "15792/206394/1"
+      ], 
+      "data": {
+        "contigs": {
+          "NZ_CP028382.1": {
+            "description": "Escherichia coli strain RM10466 plasmid pRM10466-1, complete sequence", 
+            "name": "NZ_CP028382.1", 
+            "length": 160675, 
+            "contig_id": "NZ_CP028382.1", 
+            "gc_content": 0.49427, 
+            "is_circ": 1, 
+            "md5": "796eb8aeed77a8da37f8b9e74574cc2d"
+          }, 
+          "NZ_CP028381.1": {
+            "description": "Escherichia coli strain RM10466 chromosome, complete genome", 
+            "name": "NZ_CP028381.1", 
+            "length": 5044460, 
+            "contig_id": "NZ_CP028381.1", 
+            "gc_content": 0.5084, 
+            "is_circ": 1, 
+            "md5": "150f0f0222c9d1b174efbb23bd16c16f"
+          }, 
+          "NZ_CP028383.1": {
+            "description": "Escherichia coli strain RM10466 plasmid pRM10466-2, complete sequence", 
+            "name": "NZ_CP028383.1", 
+            "length": 67750, 
+            "contig_id": "NZ_CP028383.1", 
+            "gc_content": 0.50948, 
+            "is_circ": 1, 
+            "md5": "a9e0a6e95b0d0d3e027de0b78b2fc1bb"
+          }
+        }, 
+        "assembly_id": "GCF_003176855.1_assembly", 
+        "fasta_handle_info": {
+          "size": 5361013, 
+          "handle": {
+            "url": "https://ci.kbase.us/services/shock-api", 
+            "file_name": "GCF_003176855.1_assembly.fasta", 
+            "remote_md5": "379e8eb00b7b47ece984357e993b7b7a", 
+            "hid": "KBH_417057", 
+            "type": "shock", 
+            "id": "ce546ae2-6614-4acb-a3b8-5dc5bcc11fef"
+          }, 
+          "shock_id": "ce546ae2-6614-4acb-a3b8-5dc5bcc11fef", 
+          "node_file_name": "GCF_003176855.1_assembly.fasta"
+        }, 
+        "fasta_handle_ref": "KBH_417057", 
+        "num_contigs": 3, 
+        "base_counts": {
+          "A": 1298810, 
+          "C": 1338498, 
+          "T": 1295552, 
+          "G": 1340025
+        }, 
+        "gc_content": 0.50798, 
+        "type": "Unknown", 
+        "dna_size": 5272885, 
+        "md5": "20d2f54002bce9b1382c48c11f92b8d7"
+      }, 
+      "extracted_ids": {
+        "handle": [
+          "KBH_417057"
+        ]
+      }
+    }
+  ]
+}
