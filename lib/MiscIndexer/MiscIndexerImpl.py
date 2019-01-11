@@ -21,7 +21,7 @@ class MiscIndexer:
     ######################################### noqa
     VERSION = "0.0.1"
     GIT_URL = "git@github.com:kbaseapps/MiscIndexer.git"
-    GIT_COMMIT_HASH = "be4045a9a77fe6b214acd69f240dd2bffe13c279"
+    GIT_COMMIT_HASH = "6e40ca39554b14a6ea0e4d561488a7ef6483b23b"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER

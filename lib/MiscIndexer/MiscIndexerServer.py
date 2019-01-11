@@ -49,7 +49,6 @@ def get_config():
         retconfig[nameval[0]] = nameval[1]
     return retconfig
 
-
 config = get_config()
 
 from MiscIndexer.MiscIndexerImpl import MiscIndexer  # noqa @IgnorePep8
@@ -355,6 +354,14 @@ class Application(object):
                              name='MiscIndexer.assemblycontig_mapping',
                              types=[dict])
         self.method_authentication['MiscIndexer.assemblycontig_mapping'] = 'required'  # noqa
+        self.rpc_service.add(impl_MiscIndexer.narrative_index,
+                             name='MiscIndexer.narrative_index',
+                             types=[dict])
+        self.method_authentication['MiscIndexer.narrative_index'] = 'required'  # noqa
+        self.rpc_service.add(impl_MiscIndexer.narrative_mapping,
+                             name='MiscIndexer.narrative_mapping',
+                             types=[dict])
+        self.method_authentication['MiscIndexer.narrative_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.ontologyterm_index,
                              name='MiscIndexer.ontologyterm_index',
                              types=[dict])
@@ -611,7 +618,7 @@ def start_server(host='localhost', port=0, newprocess=False):
         raise RuntimeError('server is already running')
     httpd = make_server(host, port, application)
     port = httpd.server_address[1]
-    print(("Listening on port %s" % port))
+    print("Listening on port %s" % port)
     if newprocess:
         _proc = Process(target=httpd.serve_forever)
         _proc.daemon = True
@@ -690,7 +697,7 @@ if __name__ == "__main__":
         opts, args = getopt(sys.argv[1:], "", ["port=", "host="])
     except GetoptError as err:
         # print help information and exit:
-        print((str(err)))  # will print something like "option -a not recognized"
+        print(str(err))  # will print something like "option -a not recognized"
         sys.exit(2)
     port = 9999
     host = 'localhost'
@@ -699,7 +706,7 @@ if __name__ == "__main__":
             port = int(a)
         elif o == '--host':
             host = a
-            print(("Host set to %s" % host))
+            print("Host set to %s" % host)
         else:
             assert False, "unhandled option"
 
