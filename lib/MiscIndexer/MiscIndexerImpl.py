@@ -20,8 +20,8 @@ class MiscIndexer:
     # the latter method is running.
     ######################################### noqa
     VERSION = "0.0.1"
-    GIT_URL = ""
-    GIT_COMMIT_HASH = "HEAD"
+    GIT_URL = "git@github.com:kbaseapps/MiscIndexer.git"
+    GIT_COMMIT_HASH = "be4045a9a77fe6b214acd69f240dd2bffe13c279"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -110,6 +110,44 @@ class MiscIndexer:
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method assemblycontig_mapping return value ' +
+                             'output is not type dict as required.')
+        # return the results
+        return [output]
+
+    def narrative_index(self, ctx, params):
+        """
+        :param params: instance of mapping from String to unspecified object
+        :returns: instance of type "Results" -> structure: parameter
+           "file_name" of String, parameter "index" of unspecified object
+        """
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN narrative_index
+        output = self.indexer.narrative_index(params['upa'])
+        #END narrative_index
+
+        # At some point might do deeper type checking...
+        if not isinstance(output, dict):
+            raise ValueError('Method narrative_index return value ' +
+                             'output is not type dict as required.')
+        # return the results
+        return [output]
+
+    def narrative_mapping(self, ctx, params):
+        """
+        :param params: instance of mapping from String to unspecified object
+        :returns: instance of type "Results" -> structure: parameter
+           "file_name" of String, parameter "index" of unspecified object
+        """
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN narrative_mapping
+        output = self.indexer.mapping('assemblycontig_schema.json')
+        #END narrative_mapping
+
+        # At some point might do deeper type checking...
+        if not isinstance(output, dict):
+            raise ValueError('Method narrative_mapping return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]

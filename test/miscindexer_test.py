@@ -41,6 +41,7 @@ class MiscIndexerTester(unittest.TestCase):
         cls.mock_dir = os.path.join(cls.test_dir, 'mock_data')
 
         cls.assemblyobj = cls.read_mock('assembly_object.json')
+        cls.narobj = cls.read_mock('narrative_object.json')
         cls.pairedend = cls.read_mock('pairedend_object.json')
         cls.singleend = cls.read_mock('singleend_object.json')
         cls.ontology = cls.read_mock('ontology_object.json')
@@ -83,6 +84,14 @@ class MiscIndexerTester(unittest.TestCase):
         res = iu.assemblycontig_index(self.upa)
         self.assertIsNotNone(res)
         self.assertIn('features', res)
+
+    @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
+    def index_narrative_test(self, mock_wsa):
+        iu = MiscIndexer(self.cfg)
+        iu.ws.get_objects2.return_value = self.narobj
+        res = iu.narrative_index(self.upa)
+        self.assertIsNotNone(res)
+        self.assertIn('data', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_ontologyterm_test(self, mock_wsa):

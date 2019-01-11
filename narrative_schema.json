@@ -1,0 +1,25 @@
+{
+    "schema": {
+        "code_output": {
+            "type": "text"
+        }, 
+        "app_output": {
+            "type": "text"
+        }, 
+        "app_info": {
+            "type": "text"
+        }, 
+        "title": {
+            "type": "text"
+        }, 
+        "source": {
+            "type": "text"
+        }, 
+        "app_input": {
+            "type": "text"
+        }, 
+        "job_ids": {
+            "type": "keyword"
+        }
+    }
+}

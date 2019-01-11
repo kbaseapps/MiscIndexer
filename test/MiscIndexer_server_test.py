@@ -51,6 +51,7 @@ class MiscIndexerTest(unittest.TestCase):
 
         cls.wsinfo = cls.read_mock('get_workspace_info.json')
         cls.assemblyobj = cls.read_mock('assembly_object.json')
+        cls.narobj = cls.read_mock('narrative_object.json')
         cls.pairedend = cls.read_mock('pairedend_object.json')
         cls.singleend = cls.read_mock('singleend_object.json')
         cls.ontology = cls.read_mock('ontology_object.json')
@@ -105,6 +106,9 @@ class MiscIndexerTest(unittest.TestCase):
         ret = self.getImpl().assemblycontig_mapping(self.getContext(), {})
         self.assertIsNotNone(ret[0])
 
+        ret = self.getImpl().narrative_mapping(self.getContext(), {})
+        self.assertIsNotNone(ret[0])
+
         ret = self.getImpl().ontologyterm_mapping(self.getContext(), {})
         self.assertIsNotNone(ret[0])
 
@@ -147,6 +151,12 @@ class MiscIndexerTest(unittest.TestCase):
         self.assertIsNotNone(ret[0])
         self.assertIn('features', ret[0])
         self._validate('assemblycontig_schema.json', ret[0]['features'][0])
+
+        impl.indexer.ws.get_objects2.return_value = self.narobj
+        ret = impl.narrative_index(self.getContext(), params)
+        self.assertIsNotNone(ret[0])
+        self.assertIn('data', ret[0])
+        self._validate('narrative_schema.json', ret[0]['data'])
 
         impl.indexer.ws.get_objects2.return_value = self.ontology
         ret = impl.ontologyterm_index(self.getContext(), params)

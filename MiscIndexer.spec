@@ -16,6 +16,10 @@ module MiscIndexer {
 
     funcdef assemblycontig_mapping(mapping<string,UnspecifiedObject> params) returns (Results output) authentication required;
 
+    funcdef narrative_index(mapping<string,UnspecifiedObject> params) returns (Results output) authentication required;
+
+    funcdef narrative_mapping(mapping<string,UnspecifiedObject> params) returns (Results output) authentication required;
+
     funcdef ontologyterm_index(mapping<string,UnspecifiedObject> params) returns (Results output) authentication required;
 
     funcdef ontologyterm_mapping(mapping<string,UnspecifiedObject> params) returns (Results output) authentication required;

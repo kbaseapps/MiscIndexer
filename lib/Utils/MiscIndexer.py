@@ -51,6 +51,34 @@ class MiscIndexer:
         rec['features'] = features_rec
         return rec
 
+    def narrative_index(self, upa):
+        obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
+        data = obj['data']
+        rec = dict()
+        rec['title'] = data['metadata'].get('name', '')
+        rec['source'] = []
+        rec['code_output'] = []
+        rec['app_output'] = []
+        rec['app_info'] = []
+        rec['app_input'] = []
+        rec['job_ids'] = []
+        for cell in data['cells']:
+            rec['source'].append(cell.get('source'))
+            # Skip output since it isn't used
+            # - path: cells/[*]/outputs/[*]/data
+            if 'metadata' in cell and 'kbase' in cell['metadata']:
+                kb = cell['metadata']['kbase']
+            # - path: cells/[*]/metadata/kbase/outputCell/widget/params
+            # - path: cells/[*]/metadata/kbase/appCell/app/spec/info
+                if 'appCell' in kb:
+                    ac = kb['appCell']
+                    rec['app_info'].append(ac['app']['spec']['info'])
+                    rec['app_input'].append(ac['params'])
+                if 'outputCell' in kb:
+                    rec['job_ids'].append(kb['outputCell'].get('jobid'))
+            # - path: cells/[*]/metadata/kbase/outputCell/jobId
+        return {'data': rec}
+
     def ontologyterm_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
         data = obj['data']
