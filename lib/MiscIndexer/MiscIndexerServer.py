@@ -17,7 +17,7 @@ from jsonrpcbase import JSONRPCService, InvalidParamsError, KeywordError, \
 from jsonrpcbase import ServerError as JSONServerError
 
 import log
-from .authclient import KBaseAuth as _KBaseAuth
+from MiscIndexer.authclient import KBaseAuth as _KBaseAuth
 
 try:
     from configparser import ConfigParser
@@ -49,9 +49,10 @@ def get_config():
         retconfig[nameval[0]] = nameval[1]
     return retconfig
 
+
 config = get_config()
 
-from .MiscIndexerImpl import MiscIndexer  # noqa @IgnorePep8
+from MiscIndexer.MiscIndexerImpl import MiscIndexer  # noqa @IgnorePep8
 impl_MiscIndexer = MiscIndexer(config)
 
 
