@@ -62,7 +62,13 @@ class MiscIndexer:
         rec['app_info'] = []
         rec['app_input'] = []
         rec['job_ids'] = []
-        for cell in data['cells']:
+        if 'cells' in data:
+            cells = data['cells']
+        elif 'worksheets' in data and 'cells' in data['worksheets']:
+            cells = data['worksheets']['cells']
+        else:
+            cells = []
+        for cell in cells:
             rec['source'].append(cell.get('source'))
             # Skip output since it isn't used
             # - path: cells/[*]/outputs/[*]/data
