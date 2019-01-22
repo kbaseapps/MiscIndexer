@@ -21,7 +21,7 @@ class MiscIndexer:
     ######################################### noqa
     VERSION = "0.0.1"
     GIT_URL = "git@github.com:kbaseapps/MiscIndexer.git"
-    GIT_COMMIT_HASH = "6e40ca39554b14a6ea0e4d561488a7ef6483b23b"
+    GIT_COMMIT_HASH = "0ccac363fa473b23027c0bd28fefaa25debb4f35"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -57,25 +57,6 @@ class MiscIndexer:
         # return the results
         return [output]
 
-    def assembly_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN assembly_mapping
-        output = self.indexer.mapping('assembly_schema.json')
-        #END assembly_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method assembly_mapping return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
     def assemblycontig_index(self, ctx, params):
         """
         :param params: instance of mapping from String to unspecified object
@@ -91,25 +72,6 @@ class MiscIndexer:
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method assemblycontig_index return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
-    def assemblycontig_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN assemblycontig_mapping
-        output = self.indexer.mapping('assemblycontig_schema.json')
-        #END assemblycontig_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method assemblycontig_mapping return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]
@@ -133,25 +95,6 @@ class MiscIndexer:
         # return the results
         return [output]
 
-    def narrative_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN narrative_mapping
-        output = self.indexer.mapping('assemblycontig_schema.json')
-        #END narrative_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method narrative_mapping return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
     def ontologyterm_index(self, ctx, params):
         """
         :param params: instance of mapping from String to unspecified object
@@ -167,25 +110,6 @@ class MiscIndexer:
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method ontologyterm_index return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
-    def ontologyterm_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN ontologyterm_mapping
-        output = self.indexer.mapping('ontologyterm_schema.json')
-        #END ontologyterm_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method ontologyterm_mapping return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]
@@ -209,25 +133,6 @@ class MiscIndexer:
         # return the results
         return [output]
 
-    def pairedendlibrary_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN pairedendlibrary_mapping
-        output = self.indexer.mapping('pairedendlibrary_schema.json')
-        #END pairedendlibrary_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method pairedendlibrary_mapping return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
     def pangenome_index(self, ctx, params):
         """
         :param params: instance of mapping from String to unspecified object
@@ -243,25 +148,6 @@ class MiscIndexer:
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method pangenome_index return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
-    def pangenome_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN pangenome_mapping
-        output = self.indexer.mapping('pangenome_schema.json')
-        #END pangenome_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method pangenome_mapping return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]
@@ -285,25 +171,6 @@ class MiscIndexer:
         # return the results
         return [output]
 
-    def pangenomeorthology_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN pangenomeorthology_mapping
-        output = self.indexer.mapping('pangenomeorthologyfamily_schema.json')
-        #END pangenomeorthology_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method pangenomeorthology_mapping return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
     def rnaseqsampleset_index(self, ctx, params):
         """
         :param params: instance of mapping from String to unspecified object
@@ -319,25 +186,6 @@ class MiscIndexer:
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method rnaseqsampleset_index return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
-    def rnaseqsampleset_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN rnaseqsampleset_mapping
-        output = self.indexer.mapping('rnaseqsampleset_schema.json')
-        #END rnaseqsampleset_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method rnaseqsampleset_mapping return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]
@@ -361,25 +209,6 @@ class MiscIndexer:
         # return the results
         return [output]
 
-    def singleendlibrary_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN singleendlibrary_mapping
-        output = self.indexer.mapping('singleendlibrary_schema.json')
-        #END singleendlibrary_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method singleendlibrary_mapping return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
     def taxon_index(self, ctx, params):
         """
         :param params: instance of mapping from String to unspecified object
@@ -399,25 +228,6 @@ class MiscIndexer:
         # return the results
         return [output]
 
-    def taxon_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN taxon_mapping
-        output = self.indexer.mapping('taxon_schema.json')
-        #END taxon_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method taxon_mapping return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
     def tree_index(self, ctx, params):
         """
         :param params: instance of mapping from String to unspecified object
@@ -433,25 +243,6 @@ class MiscIndexer:
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method tree_index return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
-
-    def tree_mapping(self, ctx, params):
-        """
-        :param params: instance of mapping from String to unspecified object
-        :returns: instance of type "Results" -> structure: parameter
-           "file_name" of String, parameter "index" of unspecified object
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN tree_mapping
-        output = self.indexer.mapping('tree_schema.json')
-        #END tree_mapping
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method tree_mapping return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]
