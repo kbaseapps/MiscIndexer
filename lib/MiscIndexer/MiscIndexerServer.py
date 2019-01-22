@@ -342,90 +342,46 @@ class Application(object):
                              name='MiscIndexer.assembly_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.assembly_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.assembly_mapping,
-                             name='MiscIndexer.assembly_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.assembly_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.assemblycontig_index,
                              name='MiscIndexer.assemblycontig_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.assemblycontig_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.assemblycontig_mapping,
-                             name='MiscIndexer.assemblycontig_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.assemblycontig_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.narrative_index,
                              name='MiscIndexer.narrative_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.narrative_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.narrative_mapping,
-                             name='MiscIndexer.narrative_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.narrative_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.ontologyterm_index,
                              name='MiscIndexer.ontologyterm_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.ontologyterm_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.ontologyterm_mapping,
-                             name='MiscIndexer.ontologyterm_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.ontologyterm_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.pairedendlibrary_index,
                              name='MiscIndexer.pairedendlibrary_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.pairedendlibrary_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.pairedendlibrary_mapping,
-                             name='MiscIndexer.pairedendlibrary_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.pairedendlibrary_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.pangenome_index,
                              name='MiscIndexer.pangenome_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.pangenome_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.pangenome_mapping,
-                             name='MiscIndexer.pangenome_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.pangenome_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.pangenomeorthology_index,
                              name='MiscIndexer.pangenomeorthology_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.pangenomeorthology_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.pangenomeorthology_mapping,
-                             name='MiscIndexer.pangenomeorthology_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.pangenomeorthology_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.rnaseqsampleset_index,
                              name='MiscIndexer.rnaseqsampleset_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.rnaseqsampleset_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.rnaseqsampleset_mapping,
-                             name='MiscIndexer.rnaseqsampleset_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.rnaseqsampleset_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.singleendlibrary_index,
                              name='MiscIndexer.singleendlibrary_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.singleendlibrary_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.singleendlibrary_mapping,
-                             name='MiscIndexer.singleendlibrary_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.singleendlibrary_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.taxon_index,
                              name='MiscIndexer.taxon_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.taxon_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.taxon_mapping,
-                             name='MiscIndexer.taxon_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.taxon_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.tree_index,
                              name='MiscIndexer.tree_index',
                              types=[dict])
         self.method_authentication['MiscIndexer.tree_index'] = 'required'  # noqa
-        self.rpc_service.add(impl_MiscIndexer.tree_mapping,
-                             name='MiscIndexer.tree_mapping',
-                             types=[dict])
-        self.method_authentication['MiscIndexer.tree_mapping'] = 'required'  # noqa
         self.rpc_service.add(impl_MiscIndexer.status,
                              name='MiscIndexer.status',
                              types=[dict])

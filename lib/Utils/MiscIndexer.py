@@ -2,7 +2,6 @@
 from Utils.WorkspaceAdminUtils import WorkspaceAdminUtils
 import json
 import os
-from hashlib import sha224
 
 
 class MiscIndexer:
@@ -25,13 +24,14 @@ class MiscIndexer:
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
         data = obj['data']
         rec = dict()
-        rec['name'] = data.get('name','')
+        rec['name'] = data.get('name', '')
         rec['dna_size'] = int(data['dna_size'])
         rec['gc_content'] = float(data.get('gc_content'))
         rec['external_source_id'] = data.get('external_source_id', '')
         rec['contig_count'] = len(data['contigs'])
         rec['contigs'] = len(data['contigs'])
-        return {'data': rec}
+        schema = self.mapping('assembly_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def assemblycontig_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -49,6 +49,7 @@ class MiscIndexer:
             frec['guid'] = '%s:%s' % (self._guid(upa), frec['contig_id'])
             features_rec.append(frec)
         rec['features'] = features_rec
+        rec['schema'] = self.mapping('assemblycontig_schema.json')
         return rec
 
     def narrative_index(self, upa):
@@ -83,7 +84,8 @@ class MiscIndexer:
                 if 'outputCell' in kb:
                     rec['job_ids'].append(kb['outputCell'].get('jobid'))
             # - path: cells/[*]/metadata/kbase/outputCell/jobId
-        return {'data': rec}
+        schema = self.mapping('narrative_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def ontologyterm_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -105,6 +107,7 @@ class MiscIndexer:
             frec['synonyms'] = feature.get('synonym')
             features_rec.append(frec)
         rec['features'] = features_rec
+        rec['schema'] = self.mapping('ontologyterm_schema.json')
         return rec
 
     def pairedend_index(self, upa):
@@ -124,7 +127,8 @@ class MiscIndexer:
             rec['insert_size'] = None
         rec['quality'] = float(data.get('qual_mean'))
         rec['gc_content'] = float(data.get('gc_content'))
-        return {'data': rec}
+        schema = self.mapping('pairedendlibrary_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def singleend_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -137,7 +141,8 @@ class MiscIndexer:
         rec['read_length'] = int(data.get('read_length_mean'))
         rec['quality'] = float(data.get('qual_mean'))
         rec['gc_content'] = float(data.get('gc_content'))
-        return {'data': rec}
+        schema = self.mapping('singleendlibrary_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def pangenome_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -148,12 +153,8 @@ class MiscIndexer:
         rec['genomes'] = len(data['genome_refs'])
         rec['orthologs'] = len(data['orthologs'])
         rec['genome_names'] = []
-          # I expect this won't work but I'm including to spur discussion on what might
-          #- path: genome_refs/[*]
-          #  transform: values.guid.lookup.key.scientific_name
-          # key-name: genome_names
-          #  ui-name: Genome Names
-        return {'data': rec}
+        schema = self.mapping('pangenome_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def pangenomeorthologyfamily_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -172,6 +173,7 @@ class MiscIndexer:
             frec['ortholog_genes'] = genes
             features_rec.append(frec)
         rec['features'] = features_rec
+        rec['schema'] = self.mapping('pangenome_schema.json')
         return rec
 
     def rnaseqsampleset_index(self, upa):
@@ -182,7 +184,8 @@ class MiscIndexer:
         rec['num_replicates'] = int(data.get('num_replicates', 0))
         rec['source'] = data['source']
         rec['num_samples'] = int(data['num_samples'])
-        return {'data': rec}
+        schema = self.mapping('rnaseqsampleset_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def taxon_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -193,7 +196,8 @@ class MiscIndexer:
         rec['domain'] = data['domain']
         rec['genetic_code'] = int(data['genetic_code'])
         rec['aliases'] = data['aliases']
-        return {'data': rec}
+        schema = self.mapping('taxon_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def tree_index(self, upa):
         obj = self.ws.get_objects2({'objects': [{'ref': upa}]})['data'][0]
@@ -201,7 +205,8 @@ class MiscIndexer:
         rec = dict()
         rec['labels'] = data['default_node_labels']
         rec['type'] = data['type']
-        return {'data': rec}
+        schema = self.mapping('tree_schema.json')
+        return {'data': rec, 'schema': schema}
 
     def mapping(self, filename):
         with open(os.path.join(self.schema_dir, filename)) as f:
