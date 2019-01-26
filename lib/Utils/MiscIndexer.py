@@ -43,7 +43,7 @@ class MiscIndexer:
             feature = data['contigs'][id]
             frec = {}
             frec['contig_id'] = feature['contig_id']
-            frec['description'] = feature['description']
+            frec['description'] = feature.get('description')
             frec['gc_content'] = feature['gc_content']
             frec['length'] = feature['length']
             frec['guid'] = '%s:%s' % (self._guid(upa), frec['contig_id'])
@@ -135,7 +135,10 @@ class MiscIndexer:
         data = obj['data']
         rec = dict()
         rec['technology'] = data['sequencing_tech']
-        rec['file'] = data['lib']['file']['file_name']
+        if 'lib' in data:
+            rec['file'] = data['lib']['file']['file_name']
+        elif 'lib1' in data:
+            rec['file'] = data['lib1']['file']['file_name']
         rec['phred_type'] = data['phred_type']
         rec['read_count'] = int(data['read_count'])
         rec['read_length'] = int(data.get('read_length_mean'))
