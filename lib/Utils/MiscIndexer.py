@@ -214,4 +214,4 @@ class MiscIndexer:
     def mapping(self, filename):
         with open(os.path.join(self.schema_dir, filename)) as f:
             schema = json.loads(f.read())
-        return schema
+        return schema['schema']
