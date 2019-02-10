@@ -7,7 +7,7 @@
             "type": "text"
         }, 
         "app_info": {
-            "type": "text"
+            "type": "nested"
         }, 
         "title": {
             "type": "text"
