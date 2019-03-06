@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
+import json
 import os
-import time
 import unittest
 from configparser import ConfigParser
+from unittest.mock import Mock
 
 from MiscIndexer.MiscIndexerImpl import MiscIndexer
 from MiscIndexer.MiscIndexerServer import MethodContext
-
 from installed_clients.WorkspaceClient import Workspace
-from unittest.mock import Mock
-import json
 
 
 class MiscIndexerTest(unittest.TestCase):
@@ -68,18 +66,6 @@ class MiscIndexerTest(unittest.TestCase):
             obj = json.loads(f.read())
         return obj
 
-    def getWsClient(self):
-        return self.__class__.wsClient
-
-    def getWsName(self):
-        if hasattr(self.__class__, 'wsName'):
-            return self.__class__.wsName
-        suffix = int(time.time() * 1000)
-        wsName = "test_MiscIndexer_" + str(suffix)
-        ret = self.getWsClient().create_workspace({'workspace': wsName})  # noqa
-        self.__class__.wsName = wsName
-        return wsName
-
     def _validate(self, sfile, data):
         with open(self.test_dir + '/../' + sfile) as f:
             d = f.read()
@@ -87,7 +73,6 @@ class MiscIndexerTest(unittest.TestCase):
         schema = json.loads(d)
         for key in schema['schema'].keys():
             self.assertIn(key, data)
-
 
     # NOTE: According to Python unittest naming rules test method names should start from 'test'. # noqa
     def test_indexers(self):
