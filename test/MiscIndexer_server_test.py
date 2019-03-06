@@ -39,6 +39,7 @@ class MiscIndexerTest(unittest.TestCase):
         cls.scratch = cls.cfg['scratch']
         cls.test_dir = os.path.dirname(os.path.abspath(__file__))
         cls.mock_dir = os.path.join(cls.test_dir, 'mock_data')
+        cls.schema_dir = cls.cfg['schema-dir']
 
         cls.wsinfo = cls.read_mock('get_workspace_info.json')
         cls.assemblyobj = cls.read_mock('assembly_object.json')
@@ -67,10 +68,7 @@ class MiscIndexerTest(unittest.TestCase):
         return obj
 
     def _validate(self, sfile, data):
-        with open(self.test_dir + '/../' + sfile) as f:
-            d = f.read()
-
-        schema = json.loads(d)
+        schema = json.load(open(os.path.join(self.schema_dir, sfile)))
         for key in schema['schema'].keys():
             self.assertIn(key, data)
 

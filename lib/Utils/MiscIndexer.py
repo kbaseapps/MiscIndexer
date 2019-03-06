@@ -8,8 +8,7 @@ from Utils.WorkspaceAdminUtils import WorkspaceAdminUtils
 class MiscIndexer:
     def __init__(self, config):
         self.ws = WorkspaceAdminUtils(config)
-        ldir = os.path.dirname(os.path.abspath(__file__))
-        self.schema_dir = '/'.join(ldir.split('/')[0:-2])
+        self.schema_dir = config['schema-dir']
 
     def _tf(self, val):
         if val == 0:
@@ -44,7 +43,7 @@ class MiscIndexer:
                     'description': feature.get('description'),
                     'gc_content': feature['gc_content'],
                     'length': feature['length'],
-                    'guid': f'{self._guid(upa)}:{frec["contig_id"]}'}
+                    'guid': f'{self._guid(upa)}:{feature["contig_id"]}'}
             features_rec.append(frec)
         rec['features'] = features_rec
         rec['schema'] = self.mapping('assemblycontig_schema.json')
