@@ -66,7 +66,7 @@ class MiscIndexerTester(unittest.TestCase):
         self.assertIn('data', res)
         res = iu.assemblycontig_index(self.upa)
         self.assertIsNotNone(res)
-        self.assertIn('features', res)
+        self.assertIn('documents', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_narrative_test(self, mock_wsa):
@@ -82,7 +82,7 @@ class MiscIndexerTester(unittest.TestCase):
         iu.ws.get_objects2.return_value = self.ontology
         res = iu.ontologyterm_index(self.upa)
         self.assertIsNotNone(res)
-        self.assertIn('features', res)
+        self.assertIn('documents', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_pairedend_test(self, mock_wsa):
@@ -101,7 +101,7 @@ class MiscIndexerTester(unittest.TestCase):
         self.assertIn('data', res)
         res = iu.pangenomeorthologyfamily_index(self.upa)
         self.assertIsNotNone(res)
-        self.assertIn('features', res)
+        self.assertIn('documents', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_rnaseq_test(self, mock_wsa):

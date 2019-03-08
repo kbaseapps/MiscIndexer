@@ -45,7 +45,7 @@ class MiscIndexer:
                     'length': feature['length'],
                     'guid': f'{self._guid(upa)}:{feature["contig_id"]}'}
             features_rec.append(frec)
-        rec['features'] = features_rec
+        rec['documents'] = features_rec
         rec['schema'] = self.mapping('assemblycontig_schema.json')
         return rec
 
@@ -101,7 +101,7 @@ class MiscIndexer:
                     'definition': feature['def'],
                     'synonyms': feature.get('synonym')}
             features_rec.append(frec)
-        rec['features'] = features_rec
+        rec['documents'] = features_rec
         rec['schema'] = self.mapping('ontologyterm_schema.json')
         return rec
 
@@ -166,7 +166,7 @@ class MiscIndexer:
                 genes.append(g[0])
             frec['ortholog_genes'] = genes
             features_rec.append(frec)
-        rec['features'] = features_rec
+        rec['documents'] = features_rec
         rec['schema'] = self.mapping('pangenome_schema.json')
         return rec
 

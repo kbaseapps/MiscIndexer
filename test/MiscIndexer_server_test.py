@@ -83,9 +83,9 @@ class MiscIndexerTest(unittest.TestCase):
 
         ret = self.impl.assemblycontig_index(self.ctx, self.params)
         self.assertIsNotNone(ret[0])
-        self.assertIn('features', ret[0])
+        self.assertIn('documents', ret[0])
         self.assertIn('schema', ret[0])
-        self._validate('assemblycontig_schema.json', ret[0]['features'][0])
+        self._validate('assemblycontig_schema.json', ret[0]['documents'][0])
 
     def test_narrative_indexes(self):
         self.impl.indexer.ws.get_objects2.return_value = self.narobj
@@ -107,12 +107,12 @@ class MiscIndexerTest(unittest.TestCase):
         self.impl.indexer.ws.get_objects2.return_value = self.ontology
         ret = self.impl.ontologyterm_index(self.ctx, self.params)
         self.assertIsNotNone(ret[0])
-        self.assertIn('features', ret[0])
+        self.assertIn('documents', ret[0])
         self.assertIn('schema', ret[0])
-        self.assertIn('definition', ret[0]['features'][0])
-        self.assertIn('id', ret[0]['features'][0])
-        self.assertIn('name', ret[0]['features'][0])
-        self.assertIn('namespace', ret[0]['features'][0])
+        self.assertIn('definition', ret[0]['documents'][0])
+        self.assertIn('id', ret[0]['documents'][0])
+        self.assertIn('name', ret[0]['documents'][0])
+        self.assertIn('namespace', ret[0]['documents'][0])
         self.assertIn('ontology_id', ret[0]['parent'])
         self.assertIn('ontology_name', ret[0]['parent'])
 
@@ -134,9 +134,9 @@ class MiscIndexerTest(unittest.TestCase):
 
         ret = self.impl.pangenomeorthology_index(self.ctx, self.params)
         self.assertIsNotNone(ret[0])
-        self.assertIn('features', ret[0])
+        self.assertIn('documents', ret[0])
         self.assertIn('schema', ret[0])
-        self._validate('pangenomeorthologyfamily_schema.json', ret[0]['features'][0])
+        self._validate('pangenomeorthologyfamily_schema.json', ret[0]['documents'][0])
 
     def test_rnaseqsampleset_index(self):
         self.impl.indexer.ws.get_objects2.return_value = self.rnaseqsampleset
