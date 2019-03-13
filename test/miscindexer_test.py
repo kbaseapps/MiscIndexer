@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
-import unittest
-import os  # noqa: F401
 import json  # noqa: F401
-import time
+import os  # noqa: F401
+import unittest
+from configparser import ConfigParser  # py3
+from os import environ
 from unittest.mock import patch
 
-from os import environ
-from configparser import ConfigParser  # py3
-
-from pprint import pprint  # noqa: F401
-
-from Workspace.WorkspaceClient import Workspace as workspaceService
-# from MiscIndexer.authclient import KBaseAuth as _KBaseAuth
 from Utils.MiscIndexer import MiscIndexer
+from installed_clients.WorkspaceClient import Workspace as workspaceService
 
 
 class MiscIndexerTester(unittest.TestCase):
@@ -62,18 +57,6 @@ class MiscIndexerTester(unittest.TestCase):
             obj = json.loads(f.read())
         return obj
 
-    def getWsClient(self):
-        return self.__class__.wsClient
-
-    def getWsName(self):
-        if hasattr(self.__class__, 'wsName'):
-            return self.__class__.wsName
-        suffix = int(time.time() * 1000)
-        wsName = "test_MiscIndexer_" + str(suffix)
-        ret = self.getWsClient().create_workspace({'workspace': wsName})  # noqa
-        self.__class__.wsName = wsName
-        return wsName
-
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_assembly_test(self, mock_wsa):
         iu = MiscIndexer(self.cfg)
@@ -83,7 +66,7 @@ class MiscIndexerTester(unittest.TestCase):
         self.assertIn('data', res)
         res = iu.assemblycontig_index(self.upa)
         self.assertIsNotNone(res)
-        self.assertIn('features', res)
+        self.assertIn('documents', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_narrative_test(self, mock_wsa):
@@ -99,7 +82,7 @@ class MiscIndexerTester(unittest.TestCase):
         iu.ws.get_objects2.return_value = self.ontology
         res = iu.ontologyterm_index(self.upa)
         self.assertIsNotNone(res)
-        self.assertIn('features', res)
+        self.assertIn('documents', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_pairedend_test(self, mock_wsa):
@@ -118,7 +101,7 @@ class MiscIndexerTester(unittest.TestCase):
         self.assertIn('data', res)
         res = iu.pangenomeorthologyfamily_index(self.upa)
         self.assertIsNotNone(res)
-        self.assertIn('features', res)
+        self.assertIn('documents', res)
 
     @patch('Utils.MiscIndexer.WorkspaceAdminUtils', autospec=True)
     def index_rnaseq_test(self, mock_wsa):
