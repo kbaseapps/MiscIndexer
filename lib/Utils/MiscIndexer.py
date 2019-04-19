@@ -88,7 +88,7 @@ class MiscIndexer:
         data = obj['data']
         rec = {
             'parent': {
-                'ontology_id': data['ontology'],
+                'ontology_id': data.get('ontology', None),
                 'ontology_name': data.get('default_namespace', None)
              }
         }
