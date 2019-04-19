@@ -99,7 +99,7 @@ class MiscIndexer:
             frec = {'guid': f'{self._guid(upa)}:{feature["id"]}',
                     'id': feature['id'],
                     'name': feature['name'],
-                    'namespace': feature['namespace'],
+                    'namespace': feature.get('namespace', None),
                     'definition': feature['def'],
                     'synonyms': feature.get('synonym')}
             features_rec.append(frec)
