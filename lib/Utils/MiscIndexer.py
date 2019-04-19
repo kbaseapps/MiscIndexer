@@ -89,7 +89,9 @@ class MiscIndexer:
         rec = {
             'parent': {
                 'ontology_id': data['ontology'],
-                'ontology_name': data.get('default_namespace', None}}
+                'ontology_name': data.get('default_namespace', None)
+             }
+        }
 
         features_rec = []
         for name in data['term_hash'].keys():
